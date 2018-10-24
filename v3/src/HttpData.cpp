@@ -106,7 +106,7 @@ bool HttpData::parseRequest(Buffer* buf, Timestamp receiveTime){
 void HttpData::appendToBuffer(Buffer* output)const{
     std::string crlf("\r\n");
     char buf[32];
-    snprintf(buf, sizeof buf, "HTTP/1.1 %d ", statusCode_);
+    snprintf(buf, sizeof buf, "HTTP/1.1 %d", statusCode_);
     output->append(buf, sizeof buf);
     // printf("statusMessage is %s\n", statusMessage_.c_str());
     output->append(statusMessage_);
